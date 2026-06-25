@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"> <!-- the app's table of contents for Android -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- allow network access (for the API) -->
 
+    <!-- App-wide settings; android:name tells Android to use OUR All class -->
     <application
         android:name=".application.App"
         android:allowBackup="true"
@@ -13,13 +14,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
+        <!-- Declares MainActivity; the intent-filter below makes it the launcher screen -->
         <activity
             android:name=".application.MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" /> <!-- this is a main entry point -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" /> <!-- show it in the device app launcher -->
             </intent-filter>
         </activity>
     </application>

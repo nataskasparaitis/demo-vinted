@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#09B1BA</color>
-    <color name="colorPrimaryDark">#0192A5</color>
-    <color name="colorAccent">#ffffff</color>
-    <color name="colorGray">#DDDDDD</color>
-    <color name="colorBlack">#000000</color>
+<?xml version="1.0" encoding="utf-8"?> <!-- XMP declaration -->
+<resources> <!-- container for color values -->
+    <color name="colorPrimary">#09B1BA</color> <!-- Vinted teal (primary brand color) -->
+    <color name="colorPrimaryDark">#0192A5</color> <!-- darker teal (older status bars) -->
+    <color name="colorAccent">#ffffff</color> <!-- accent color (white) -->
+    <color name="colorGray">#DDDDDD</color> <!-- lighter gray (image placeholder) -->
+    <color name="colorBlack">#000000</color> <!-- black (used for text) -->
 </resources>

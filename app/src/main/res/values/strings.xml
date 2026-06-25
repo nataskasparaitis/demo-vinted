@@ -1,8 +1,8 @@
-<resources>
-    <string name="app_name">Demo Vinted</string>
-    <string name="price">Price</string>
-    <string name="brand">Brand</string>
-    <string name="size">Size</string>
-    <string name="buy">Buy</string>
-    <string name="base_vinted_endpoint_url">http://mobile-homework-api.vinted.com/</string>
+<resources> <!-- container for all text strings -->
+    <string name="app_name">Demo Vinted</string> <!-- the app's display name -->
+    <string name="price">Price</string> <!-- label shown before an item's price -->
+    <string name="brand">Brand</string> <!-- label shown before and item's brand -->
+    <string name="size">Size</string> <!-- label shown before an item's size -->
+    <string name="buy">Buy</string> <!-- text on the buy button -->
+    <string name="base_vinted_endpoint_url">http://mobile-homework-api.vinted.com/</string> <!-- the API base web address -->
 </resources>

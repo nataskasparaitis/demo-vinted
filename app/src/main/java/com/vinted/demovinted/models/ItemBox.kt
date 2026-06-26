@@ -19,16 +19,16 @@ data class ItemBox(
     companion object { // the factory lives on the type itself
 
         fun fromFeedItem( // build an ItemBox from a raw FeedItem
-            catalogItem: FeedItem, // the raw item
+            feedItem: FeedItem, // the raw item
             currencyFormatter: CurrencyFormatter, // used to format the price
         ): ItemBox {
             return ItemBox( // create the UI item
-                itemId = catalogItem.id.toString(), // id as text
-                mainPhoto = catalogItem.mainPhoto, // photo frm the computed property
-                price = catalogItem.price, // keep the raw price too
-                formattedPrice = currencyFormatter.format(catalogItem.price).toString(), // pre-format the price
-                brandTitle = catalogItem.itemBrand.title, // brand title from the computed property
-                category = catalogItem.category, // category text
+                itemId = feedItem.id.toString(), // id as text
+                mainPhoto = feedItem.mainPhoto, // photo frm the computed property
+                price = feedItem.price, // keep the raw price too
+                formattedPrice = currencyFormatter.format(feedItem.price).toString(), // pre-format the price
+                brandTitle = feedItem.itemBrand.title, // brand title from the computed property
+                category = feedItem.category, // category text
             )
         }
     }

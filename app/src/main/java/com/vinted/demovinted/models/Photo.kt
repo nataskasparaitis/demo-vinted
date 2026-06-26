@@ -9,5 +9,5 @@ data class Photo( // a data holder (auto equals/copy/toString)
     val id: String = "", // photo id; default empty
     val url: String = "", // image web address; default empty
     @Json(name = "is_main") val isMain: Boolean = false, // JSON "is_main" -> isMain
-    @Json(name = "full_size_url") val fulSizeUrl: String? = null // JSON "full_size_url"; may be null
+    @Json(name = "full_size_url") val fullSizeUrl: String? = null // JSON "full_size_url"; may be null
 ) : Parcelable // this class can be passed between screens

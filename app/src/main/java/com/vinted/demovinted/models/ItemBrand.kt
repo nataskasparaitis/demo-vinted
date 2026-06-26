@@ -13,7 +13,7 @@ data class ItemBrand( // a data holder describing a brand
 
     override fun toString() = title // printing a brand shows its title
 
-    companion object { // members called on the type itself (like Python @classmethod
+    companion object { // members called on the type itself (like Python @classmethod)
         const val NO_BRAND_ID = "1" // id used for the "no brand" placeholder
 
         @JvmOverloads // Java interop: generate overloads for the default argument

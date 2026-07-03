@@ -20,8 +20,8 @@ open class SpacingItemDecoration( // open = subclassable; adds spacing around ce
         super.getItemOffsets(outRect, view, parent, state) // default behavior first
 
         when (orientation) { // choose margins based on orientation
-            HORIZONTAL_SPACING -> outRect.set(offset, 0, offset, 0) // left/right only
             VERTICAL_SPACING -> outRect.set(0, offset, 0, offset) // top/bottom only
+            HORIZONTAL_SPACING -> outRect.set(offset, 0, offset, 0) // left/right only
             VERTICAL_HORIZONTAL_SPACING -> outRect.set(offset, offset, offset, offset) // all sides
         }
     }

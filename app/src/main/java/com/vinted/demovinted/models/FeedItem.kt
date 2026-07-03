@@ -11,7 +11,7 @@ class FeedItem( // one item exactly as the API sends it
 )   {
 
     val mainPhoto: Photo // computed property (like Python @property)
-        get() = Photo(url = "https://mobile-homework-api.vinded.com/images/$photo") // build a full image URL from the filename
+        get() = Photo(url = "https://mobile-homework-api.vinted.com/images/$photo") // build a full image URL from the filename
 
     val itemBrand: ItemBrand // computed property
         get() = ItemBrand.createNoBrand(brand) // wrap the brand name in a ItemBrand

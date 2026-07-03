@@ -4,5 +4,5 @@
     <string name="brand">Brand</string> <!-- label shown before and item's brand -->
     <string name="size">Size</string> <!-- label shown before an item's size -->
     <string name="buy">Buy</string> <!-- text on the buy button -->
-    <string name="base_vinted_endpoint_url">http://mobile-homework-api.vinted.com/</string> <!-- the API base web address -->
+    <string name="base_vinted_endpoint_url">https://mobile-homework-api.vinted.com/</string> <!-- the API base web address -->
 </resources>

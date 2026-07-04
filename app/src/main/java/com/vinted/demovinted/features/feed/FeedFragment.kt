@@ -4,17 +4,19 @@ import android.os.Bundle // carries saved screen state
 import android.view.View // a UI element
 import android.widget.Toast // small pop-up message
 import androidx.fragment.app.Fragment // base class for a sub-screen
+import androidx.fragment.app.commit // run a fragment transaction
 import androidx.fragment.app.viewModels // gets a ViewModel for this fragment
 import androidx.lifecycle.Lifecycle // lifecycle states
 import androidx.lifecycle.lifecycleScope // coroutine scope tied to the view
-import androidx.lifecycle.repeatOnLifecycle // collect only while the screen is visible
+import androidx.lifecycle.repeatOnLifecycle // collect only while visible
 import androidx.recyclerview.widget.GridLayoutManager // grid arrangement
 import by.kirich1409.viewbindingdelegate.viewBinding // one-liner ViewBinding
 import com.vinted.demovinted.R // generated resource ids
 import com.vinted.demovinted.core.recyclerview.EvenSpacingItemDecorator // grid spacing
-import com.vinted.demovinted.models.ItemBox // UI item model
 import com.vinted.demovinted.databinding.FeedFragmentBinding // typed views for feed_fragment.xml
 import com.vinted.demovinted.features.feed.FeedViewModel.Event // the event type
+import com.vinted.demovinted.models.ItemBox // UI item model
+import com.vinted.demovinted.features.itemdetails.ItemDetailsFragment // the details screen
 import dagger.hilt.android.AndroidEntryPoint // lets Hilt inject into this fragment
 import kotlinx.coroutines.launch // start a coroutine
 
@@ -24,7 +26,16 @@ class FeedFragment : Fragment(R.layout.feed_fragment) { // uses feed_fragment.xm
     private val binding: FeedFragmentBinding by viewBinding() // typed access to the layout's views
     private val viewModel: FeedViewModel by viewModels() // the screen's ViewModel (built by Hilt)
 
-    private val feedAdapter = FeedAdapter() // the grid adapter (no click handling yet)
+    private val feedAdapter = FeedAdapter(::navigateToItemsDetails) // grid adapter; taps open details
+
+    private fun navigateToItemsDetails(itemBox: ItemBox) { // open the tapped item's details
+        val fragment = ItemDetailsFragment.newInstance(itemBox) // build the details fragment
+
+        parentFragmentManager.commit { // run a fragment transaction
+            replace(R.id.container, fragment) // swap in the details screen
+            addToBackStack(null) // let Back return to the feed
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // runs after the view exists
         super.onViewCreated(view, savedInstanceState) // base behavior first

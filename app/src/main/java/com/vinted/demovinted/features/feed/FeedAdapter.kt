@@ -11,7 +11,9 @@ import com.vinted.demovinted.R // generated resource ids
 import com.vinted.demovinted.models.ItemBox // the UI item model
 import com.vinted.demovinted.databinding.ItemFeedBinding // typed views for item_feed.xml
 
-class FeedAdapter : ListAdapter<ItemBox, FeedViewHolder>(FeedDiffCallback()) { // bridges data <-> grid
+class FeedAdapter( // bridges data <-> grid
+    private val onItemClick: (ItemBox) -> Unit = {}, // callback for taps; default does nothing
+) : ListAdapter<ItemBox, FeedViewHolder>(FeedDiffCallback()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder { // make a reusable cell
@@ -21,6 +23,7 @@ class FeedAdapter : ListAdapter<ItemBox, FeedViewHolder>(FeedDiffCallback()) { /
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) { // fill a cell with data
         holder.bind(currentList[position]) // bind the item at this position
+        holder.itemView.setOnClickListener { onItemClick(currentList[position]) } // tap -> call the callback with this item
     }
 }
 
